@@ -1,0 +1,119 @@
+{
+  "title": "AI Outreach Lead Generator",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "keywords": {
+      "title": "Role keywords",
+      "type": "array",
+      "description": "Job title or skill keywords to match, e.g. ['LLM', 'AI', 'machine learning', 'data engineer', 'Full stack web developer'].",
+      "items": {
+        "type": "string"
+      },
+      "editor": "stringList",
+      "prefill": ["LLM", "AI agent", "machine learning", "data engineer", "Full stack web developer"," prompt engineer", "AI researcher"]
+    },
+    "locations": {
+      "title": "Locations",
+      "type": "array",
+      "description": "Geographic filters such as ['US', 'Canada', 'Remote']. Leave empty to search all.",
+      "items": {
+        "type": "string"
+      },
+      "editor": "stringList",
+      "prefill": ["Remote"]
+    },
+    "max_results": {
+      "title": "Max number of jobs",
+      "type": "integer",
+      "description": "Maximum number of matching job posts to process.",
+      "minimum": 1,
+      "maximum": 100,
+      "default": 10
+    },
+    "remote_only": {
+      "title": "Remote only",
+      "type": "boolean",
+      "description": "If enabled, include only remote jobs where supported by the source.",
+      "default": true
+    },
+    "seniority": {
+      "title": "Seniority level filter",
+      "type": "string",
+      "description": "Optional seniority filter such as 'junior', 'mid', 'senior'. Leave empty for any.",
+      "default": "",
+      "editor": "textfield"
+    },
+    "language": {
+      "title": "Outreach language",
+      "type": "string",
+      "description": "Language for the generated outreach messages, e.g. 'English' or 'Spanish'.",
+      "default": "English",
+      "editor": "select",
+      "enum": ["English", "Spanish", "French", "German", "Other"]
+    },
+    "job_sources": {
+      "title": "Job sources",
+      "type": "array",
+      "description": "Which job sources to use.",
+      "items": {
+        "type": "string",
+        "enum": ["remotive", "jobicy", "arbeitnow"]
+      },
+      "editor": "select",
+      "default": ["remotive"],
+      "uniqueItems": true
+    },
+    "required_tech_keywords": {
+      "title": "Required tech keywords",
+      "type": "array",
+      "description": "Only keep jobs whose description contains at least one of these terms, e.g. ['Python','TypeScript','AWS']. Leave empty to keep all.",
+      "items": {
+        "type": "string"
+      },
+      "editor": "stringList",
+      "prefill": []
+    },
+    "exclude_company_keywords": {
+      "title": "Exclude company keywords",
+      "type": "array",
+      "description": "Drop jobs where the company name or description contains any of these terms, e.g. ['recruitment','agency'].",
+      "items": {
+        "type": "string"
+      },
+      "editor": "stringList",
+      "prefill": []
+    },
+    "campaign_name": {
+      "title": "Campaign name",
+      "type": "string",
+      "description": "Optional label stored with each lead, e.g. 'US LLM agencies Dec 2025'.",
+      "default": "",
+      "editor": "textfield"
+    },
+    "your_name": {
+      "title": "Your name for signatures",
+      "type": "string",
+      "description": "Used to personalize email and DM signatures.",
+      "default": "",
+      "editor": "textfield"
+    },
+    "max_leads_per_source": {
+  "title": "Max leads per source",
+  "type": "integer",
+  "description": "Upper limit of leads to keep from each job source before merging.",
+  "minimum": 1,
+  "maximum": 100,
+  "default": 20
+},
+"skip_llm_if_no_snippet": {
+  "title": "Skip LLM if no snippet",
+  "type": "boolean",
+  "description": "If enabled, leads without a description/snippet will be dropped before outreach generation.",
+  "default": true
+}
+
+
+  },
+  "required": ["keywords", "max_results"]
+}

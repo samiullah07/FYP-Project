@@ -1,0 +1,13 @@
+{
+  "actorSpecification": 1,
+  "name": "ai-outreach-lead-generator",
+  "title": "AI Outreach Lead Generator",
+  "version": "0.9",
+  "buildTag": "latest",
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "dataset": "./dataset_schema.json",
+  "environmentVariables": {
+    "GROQ_API_KEY": "@groqKey"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "actorDatasetSchemaVersion": 1,
+  "title": "AI Outreach Lead Generator dataset schema",
+  "views": {
+    "leads_overview": {
+      "title": "Leads overview",
+      "description": "Compact view of key lead fields for quick scanning.",
+      "fields": [
+        "type",
+        "source",
+        "company_name",
+        "job_title",
+        "location",
+        "fit_score",
+        "tags",
+        "job_url"
+      ]
+    }
+  }
+}
