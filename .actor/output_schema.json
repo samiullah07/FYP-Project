@@ -1,0 +1,14 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "AI Outreach Lead Generator output",
+  "description": "Quick links to generated outreach leads stored in the default dataset.",
+  "type": "object",
+  "properties": {
+    "allLeads": {
+      "type": "string",
+      "title": "All outreach leads",
+      "description": "Every job with its generated email and LinkedIn message.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}
